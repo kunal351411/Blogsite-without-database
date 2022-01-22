@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>
+
+<h1>Home</h1>
+<p><%= content %></p>
+
+<% posts.forEach(function (post){ %>
+ <% const string = post.content.slice(0, 100).concat('...'); %>
+ <% const postLink = "/posts/"+post.title.split(" ").join("-"); %>
+  <h1> <%= post.title %> </h1>
+  <p> <%= string %> <a href= <%= postLink %> >Read More</a></p>
+<% }); %>
+
+<%- include('partials/footer'); -%>
